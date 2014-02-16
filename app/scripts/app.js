@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bitcoinAngularApp', [])
+angular.module('bitcoinAngularApp', ['datatablesDirectives'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
