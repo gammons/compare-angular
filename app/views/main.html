@@ -1,1 +1,16 @@
-<table gdatatable class='table table-striped table-bordered'> </table>
+<table gdatatable class='table table-striped table-bordered'>
+  <thead>
+    <tr>
+      <th ng-click="sort()" ng-repeat="header in tableHeaderNames">
+        {{header}}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="row in rows">
+      <td ng-repeat="key in row"> {{key}} </td>
+    </tr>
+  </tbody>
+</table>
+<button class='btn' ng-click="run()">Do this</button>
