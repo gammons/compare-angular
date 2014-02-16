@@ -1,0 +1,8 @@
+{
+  "name": "datatables-fixedheader",
+  "version": "2.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DataTables/FixedHeader.git"
+  }
+}
