@@ -44,10 +44,10 @@ angular.module('datatablesDirectives', []).directive('datatable', function ($htt
         }   
     	
     	// Just some basic validation.
-    	if (typeof options['sAjaxSource'] === 'undefined') {
+    	// if (typeof options['sAjaxSource'] === 'undefined') {
 
-    		throw "Ajax Source not defined! Use sajaxsource='/api/v1/blabla'";
-    	}
+    	// 	throw "Ajax Source not defined! Use sajaxsource='/api/v1/blabla'";
+    	// }
     	
     	// for Angular http inceptors
         if (typeof options['fnServerData'] === 'undefined') {

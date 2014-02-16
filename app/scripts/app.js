@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('bitcoinAngularApp', ['datatablesDirectives'])
+angular.module('bitcoinAngularApp', ['grantDatatables'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
