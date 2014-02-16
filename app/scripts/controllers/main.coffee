@@ -2,10 +2,9 @@
 
 @app = angular.module('bitcoinAngularApp')
 
-@app.controller 'MainCtrl', ($scope, $compile) ->
-  #renderCheckbox = (opts) -> $compile("<input ng-click='check()' type='checkbox' value='#{opts}'/>", $scope)
-  $scope.check = ->
-    console.log "ran check"
+@app.controller 'MainCtrl', ($scope) ->
+  $scope.check = -> console.log "ran check"
+
   $scope.dtOptions =
     bPaginate: false
     sAjaxSource: 'data2.json'
