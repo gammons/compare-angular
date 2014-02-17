@@ -8,7 +8,7 @@ angular.module('comparator', ['grantDatatables'])
         controller: 'MainCtrl'
       })
       .when('/compare', {
-        templateUrl: 'views/comapre.html',
+        templateUrl: 'views/compare.html',
         controller: 'CompareCtrl'
       })
       .otherwise({
