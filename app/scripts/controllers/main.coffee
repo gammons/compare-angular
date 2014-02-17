@@ -1,6 +1,6 @@
 'use strict'
 
-@app = angular.module('bitcoinAngularApp')
+@app = angular.module('comparator')
 
 @app.controller 'MainCtrl', ($scope) ->
 
