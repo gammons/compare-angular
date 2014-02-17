@@ -1,9 +1,0 @@
-{
-  "name": "datatables-angular-directive",
-  "version": "0.0.0",
-  "commit": "918238474068183bd3e55b2b0e31d0d60eb64a7d",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/maktouch/datatables-angular-directive.git"
-  }
-}

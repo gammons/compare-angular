@@ -1,9 +1,0 @@
-{
-  "name": "datatables-bootstrap3",
-  "version": "0.0.0",
-  "commit": "7867c2ac15bd10b133d6add05efd18c7241c5c7a",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Jowin/Datatables-Bootstrap3.git"
-  }
-}
