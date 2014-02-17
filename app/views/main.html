@@ -4,8 +4,12 @@
 <table gdatatable class='table table-striped table-bordered'>
   <thead>
     <tr>
-      <th ng-click="changeSortColumn(header)" ng-repeat="header in tableHeaderNames">
+      <th ng-model=sorter ng-click="changeSortColumn(header)" ng-repeat="header in tableHeaderNames">
         {{header.name}}
+        
+        <div class='pull-right'>
+          <i ng-class="getSortClass(header)" />
+        </div>
       </th>
     </tr>
   </thead>
