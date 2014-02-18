@@ -1,6 +1,7 @@
 angular.module('grantDatatables', []).directive 'gdatatable', ($http) ->
   link: ($scope, $elem, attrs) ->
     $scope.sortDir = true
+    $scope.checkedItems = []
 
     $http.get('data2.json').success (resp) ->
       $scope.tableHeaderNames = resp.header
@@ -18,3 +19,9 @@ angular.module('grantDatatables', []).directive 'gdatatable', ($http) ->
           "glyphicon glyphicon-arrow-up"
         else
           "glyphicon glyphicon-arrow-down"
+
+    $scope.check = (id) ->
+      if $scope.checkedItems.indexOf(id) > -1
+        $scope.checkedItems.splice($scope.checkedItems.indexOf(id), 1)
+      else
+        $scope.checkedItems.push(id)
