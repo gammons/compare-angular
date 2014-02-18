@@ -7,7 +7,7 @@
     success = (resp) ->
       $scope.tableHeaderNames = resp.header
       $scope.rows = resp.data
-    gdata(success)
+    gdata.getData(success)
 
     $scope.changeSortColumn = (col) ->
       return unless col.sortable
