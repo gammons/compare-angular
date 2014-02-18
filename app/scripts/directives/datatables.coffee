@@ -1,11 +1,13 @@
-angular.module('grantDatatables', []).directive 'gdatatable', ($http, $filter, $sce) ->
+@datatables = angular.module('grantDatatables', [])
+@datatables.directive 'gdatatable', ($http, $filter, $sce, gdata) ->
   link: ($scope, $elem, attrs) ->
     $scope.sortDir = true
     $scope.checkedItems = []
 
-    $http.get('data2.json').success (resp) ->
+    success = (resp) ->
       $scope.tableHeaderNames = resp.header
       $scope.rows = resp.data
+    gdata(success)
 
     $scope.changeSortColumn = (col) ->
       return unless col.sortable
