@@ -4,7 +4,7 @@
     "total": 2,
     "header": [{"key": "manufacturer", "name": "Manufacturer", "sortable": true},
       {"key": "model", "name": "Model", "sortable": true },
-      {"key": "link", "name": "Link", "sortable": true, "dataType": "linky"},
+      {"key": "link", "name": "Link", "sortable": true, "dataType": "link"},
       {"key": "description", "name": "Description", "sortable": false},
       {"key": "cost", "name": "Cost", "sortable": true, "dataType": "currency"},
       {"key": "speed", "name": "Speed (GH/s)", "sortable": true}],

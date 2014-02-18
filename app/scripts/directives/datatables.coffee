@@ -1,4 +1,4 @@
-angular.module('grantDatatables', []).directive 'gdatatable', ($http) ->
+angular.module('grantDatatables', []).directive 'gdatatable', ($http, $filter, $sce) ->
   link: ($scope, $elem, attrs) ->
     $scope.sortDir = true
     $scope.checkedItems = []
@@ -25,3 +25,10 @@ angular.module('grantDatatables', []).directive 'gdatatable', ($http) ->
         $scope.checkedItems.splice($scope.checkedItems.indexOf(id), 1)
       else
         $scope.checkedItems.push(id)
+
+    $scope.format = (header, input) ->
+      return input if angular.isUndefined(header.dataType)
+      if header.dataType == 'link'
+        $sce.trustAsHtml("<a href='#{input}' target='_blank'>#{input}</a>")
+      else
+        $filter(header.dataType)(input)

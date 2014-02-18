@@ -37,7 +37,7 @@
       <tbody>
         <tr ng-repeat="row in rows | filter:searchFilter | orderBy:sortColumn:sortDir">
           <td> <input type='checkbox' value="{{row.id}}" ng-click='check(row.id)'> </td>
-          <td ng-repeat="header in tableHeaderNames"> {{row[header.key] | gformat:header }} </td>
+          <td ng-repeat="header in tableHeaderNames" ng-bind-html="format(header, row[header.key])"></td>
         </tr>
       </tbody>
     </table>
