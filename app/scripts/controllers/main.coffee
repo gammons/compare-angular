@@ -1,6 +1,8 @@
 'use strict'
 @app = angular.module('comparator')
 
-@app.controller 'MainCtrl', ($scope, $location, $filter, $sce) ->
-  $scope.compare = -> $location.path('/compare').search(checked: $scope.checkedItems)
+@app.controller 'MainCtrl', ($scope, $location) ->
+  $scope.compare = ->
+    console.log "checkedItems", $scope.checkedItems
+    $location.path('/compare').search(checked: $scope.checkedItems)
 
