@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('codeApp'));
+  beforeEach(module('bitcoinAngular2App'));
 
   var MainCtrl,
     scope;
