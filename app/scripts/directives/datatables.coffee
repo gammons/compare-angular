@@ -5,7 +5,7 @@
     $scope.checkedItems = []
 
     success = (resp) ->
-      $scope.tableHeaderNames = resp.header
+      $scope.headers = resp.header
       $scope.rows = resp.data
     gdata.getData(success)
 
