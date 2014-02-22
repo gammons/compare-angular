@@ -9,5 +9,12 @@
     </tr>
   </thead>
 
-  <tr>
+  <tbody>
+    <tr ng-repeat="header in headers">
+      <td ng-repeat="row in rows" ng-style="compareClass(row)">
+        <dt>{{header.name}}</dt>
+        <dd>{{row[header.key]}}</dd>
+      </td>
+    </tr>
+  </tbody>
 </table>
