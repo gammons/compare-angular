@@ -1,12 +1,17 @@
 @app = angular.module('comparator')
-@app.controller 'CompareCtrl', ($scope, $location, gdata) ->
+@app.controller 'CompareCtrl', ($scope, $location, gdata, compareColor) ->
   success = (resp) ->
     $scope.headers = resp.header
-    console.log "rows is ", resp
+    $scope.hexes = compareColor.getHex(resp.data.length)
     $scope.rows = resp.data
   gdata.findByIds($location.search().checked,success)
 
-  $scope.compareClass = ($scope) ->
-    console.log "row is", $scope.row
-    {'background-color': 'red'}
+  $scope.colors = compareColor.getHex(20)
 
+  $scope.compareClass = (row, rows, header) ->
+    if header.compare
+      items = _.map rows, (row) -> row[header.key]
+      sorted = _.sortBy items
+      sorted.reverse() if header.compare == 'lower'
+      index = _.indexOf sorted, row[header.key]
+      {'background-color': $scope.hexes[index]}

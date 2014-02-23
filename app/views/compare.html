@@ -1,6 +1,6 @@
 <h1>Comparing items</h1>
 
-<table class='table table-striped table-bordered'>
+<table class='table table-bordered'>
   <thead>
     <tr>
       <th ng-repeat="row in rows">
@@ -11,9 +11,9 @@
 
   <tbody>
     <tr ng-repeat="header in headers">
-      <td ng-repeat="row in rows" ng-style="compareClass(row)">
+      <td ng-repeat="row in rows" ng-style="compareClass(row, rows, header)">
         <dt>{{header.name}}</dt>
-        <dd>{{row[header.key]}}</dd>
+        <dd ng-bind-html="row[header.key] | formatData:header"></dd>
       </td>
     </tr>
   </tbody>
