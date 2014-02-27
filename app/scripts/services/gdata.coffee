@@ -2,7 +2,7 @@
   f =
     getData: (success) =>
       if angular.isUndefined(@data)
-        $http.get('data3.json').success (resp) =>
+        $http.get('data.json').success (resp) =>
           @data = resp
           success(@data)
       else

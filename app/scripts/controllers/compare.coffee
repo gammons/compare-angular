@@ -11,7 +11,10 @@
   $scope.compareClass = (row, rows, header) ->
     if header.compare
       items = _.map rows, (row) -> row[header.key]
-      sorted = _.sortBy items
+      sorted = if header.format == 'number' or header.format == 'currency'
+        _.sortBy items, (item) -> parseInt(item)
+      else
+        _.sortBy items
       sorted.reverse() if header.compare == 'lower'
       index = _.indexOf sorted, row[header.key]
       {'background-color': $scope.hexes[index]}
