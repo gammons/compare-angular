@@ -1,4 +1,4 @@
-@datatables.factory 'gdata', ($http) ->
+@datatables.factory 'gdata', ['$http', ($http) ->
   f =
     getData: (success) =>
       if angular.isUndefined(@data)
@@ -15,8 +15,4 @@
         success(resp)
       @getData(succ)
   f
-
-
-
-
-
+]
