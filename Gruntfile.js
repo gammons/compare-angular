@@ -400,6 +400,10 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+  grunt.registerTask('doCopyData', function() {
+    grunt.file.copy('app/data.json', 'dist/data.json')
+  });
+
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',
@@ -414,7 +418,8 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'doCopyData'
   ]);
 
   grunt.registerTask('default', [
