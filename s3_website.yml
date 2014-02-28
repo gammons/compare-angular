@@ -25,15 +25,15 @@ s3_bucket: mining-hardware-comparison
 
 # s3_reduced_redundancy: true
 
-# cloudfront_distribution_id: your-dist-id
+cloudfront_distribution_id: E3EEWGAVG6FDT5
 
-# cloudfront_distribution_config:
-#   default_cache_behavior:
-#     min_TTL: <%= 60 * 60 * 24 %>
-#   aliases:
-#     quantity: 1
-#     items:
-#       CNAME: your.website.com
+cloudfront_distribution_config:
+  default_cache_behavior:
+    min_TTL: 86400
+  aliases:
+    quantity: 1
+    items:
+      CNAME: mining-hardware-comparison.info
 
 # cloudfront_invalidate_root: true
 
