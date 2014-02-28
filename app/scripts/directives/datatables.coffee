@@ -7,6 +7,7 @@
     success = (resp) ->
       $scope.headers = resp.header
       $scope.rows = resp.data
+      $scope.htmlReady()
     gdata.getData(success)
 
     $scope.changeSortColumn = (col) ->
