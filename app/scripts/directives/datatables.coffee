@@ -1,5 +1,5 @@
 @datatables = angular.module('grantDatatables', [])
-@datatables.directive 'gdatatable', ($http, $filter, $sce, gdata) ->
+@datatables.directive 'gdatatable', ['$http', '$filter', '$sce', 'gdata', ($http, $filter, $sce, gdata) ->
   link: ($scope, $elem, attrs) ->
     $scope.sortDir = true
     $scope.checkedItems = []
@@ -28,4 +28,4 @@
         $scope.checkedItems.splice($scope.checkedItems.indexOf(id), 1)
       else
         $scope.checkedItems.push(id)
-
+]

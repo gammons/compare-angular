@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('comparator', ['grantDatatables', 'ngRoute', 'ngSanitize'])
+angular.module('comparator', ['grantDatatables', 'ngRoute', 'ngSanitize','seo'])
   .config(function ($routeProvider, $locationProvider) {
     //$locationProvider.html5Mode(true);
     $routeProvider
