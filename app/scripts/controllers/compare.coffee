@@ -1,5 +1,5 @@
 @app = angular.module('comparator')
-@app.controller 'CompareCtrl', ($scope, $location, gdata, compareColor) ->
+@app.controller 'CompareCtrl', ['$scope', '$location', 'gdata', 'compareColor', ($scope, $location, gdata, compareColor) ->
   success = (resp) ->
     $scope.headers = resp.header
     $scope.hexes = compareColor.getHex(resp.data.length)
@@ -18,3 +18,4 @@
       sorted.reverse() if header.compare == 'lower'
       index = _.indexOf sorted, row[header.key]
       {'background-color': $scope.hexes[index]}
+]
