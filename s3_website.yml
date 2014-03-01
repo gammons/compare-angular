@@ -6,12 +6,11 @@ s3_bucket: mining-hardware-comparison
 # See README for more detailed info on each of them.
 
 # max_age:
-#   "assets/*": 6000
-#   "*": 300
+#   "*": 3600
 
-# gzip:
-#   - .html
-#   - .css
+gzip:
+  - .html
+  - .css
 #   - .md
 
 # See http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region for valid endpoints
@@ -40,7 +39,7 @@ cloudfront_distribution_config:
 # concurrency_level: 5
 
 # redirects:
-#   index.php: /
+#   index.html: /
 #   about.php: about.html
 #   music-files/promo.mp4: http://www.youtube.com/watch?v=dQw4w9WgXcQ
 
