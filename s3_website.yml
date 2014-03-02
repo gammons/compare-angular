@@ -24,7 +24,7 @@ gzip:
 
 # s3_reduced_redundancy: true
 
-cloudfront_distribution_id: E3EEWGAVG6FDT5
+cloudfront_distribution_id: E3VTV439X0C9R2
 
 cloudfront_distribution_config:
   default_cache_behavior:
@@ -32,7 +32,7 @@ cloudfront_distribution_config:
   aliases:
     quantity: 1
     items:
-      CNAME: mining-hardware-comparison.info
+      CNAME: mininghardwarecomparison.info
 
 # cloudfront_invalidate_root: true
 
