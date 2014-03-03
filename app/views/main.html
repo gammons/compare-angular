@@ -5,13 +5,29 @@
 
 
   <div class='col-md-6'>
+
+
     <div class='pull-right'>
       <form class='search-form form-inline'>
         <div class='form-group'>
           <input placeholder="Search" class='form-control' type='text' ng-model='searchFilter' />
         </div>
+
+        <div class='dropdown'>
+          <button class='btn dropdown-toggle' data-toggle='dropdown'>
+            Select columns
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu" role='menu'>
+            <li ng-repeat="col in headers">
+              <a stop-event='click' ng-click="col.selected = !col.selected">
+                <input type='checkbox' stop-event='click' ng-model="col.selected" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0"> {{col.name}}
+              </a>
+            </li>
+          </ul>
+        </div>
       </form>
-      <button class='btn'>Select columns</button>
     </div>
   </div>
 </div>
@@ -21,7 +37,7 @@
     <thead>
       <tr>
         <th></th>
-        <th ng-model=sorter ng-click="changeSortColumn(header)" ng-repeat="header in headers">
+        <th ng-model=sorter ng-click="changeSortColumn(header)" ng-repeat="header in headers | filter:{selected:true}">
           {{header.name}}
           <div class='pull-right'>
             <i ng-class="getSortClass(header)" />
@@ -33,7 +49,7 @@
     <tbody>
       <tr ng-repeat="row in rows | filter:searchFilter | orderBy:sortColumn:sortDir">
         <td> <input type='checkbox' value="{{row.id}}" ng-click='check(row.id)'> </td>
-        <td ng-repeat="header in headers" ng-bind-html="row[header.key] | formatData:header"></td>
+        <td ng-repeat="header in headers | filter:{selected:true}" ng-bind-html="row[header.key] | formatData:header"></td>
       </tr>
     </tbody>
   </table>
