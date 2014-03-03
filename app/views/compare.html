@@ -10,7 +10,7 @@
   <tbody>
     <tr ng-repeat="header in headers">
       <td ng-repeat="row in rows" ng-style="compareClass(row, rows, header)">
-        <dt>{{header.name}}</dt>
+        <dt>{{header.name}}<star></star></dt>
         <dd ng-bind-html="row[header.key] | formatData:header"></dd>
       </td>
     </tr>
