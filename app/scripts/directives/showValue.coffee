@@ -1,4 +1,4 @@
-@app.directive 'showvalue', ($filter, $compile) ->
+@app.directive 'showvalue', ['$filter', '$compile', ($filter, $compile) ->
   link: ($scope, $elem, attrs) ->
 
     val = $scope.item[$scope.header.key]
@@ -11,3 +11,4 @@
       return val if $scope.header.format == ''
       formatted = $filter($scope.header.format)(val)
       $elem.html formatted
+]
