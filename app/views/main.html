@@ -3,9 +3,7 @@
     <button class='btn' ng-click="compare()">Compare selections</button>
   </div>
 
-
   <div class='col-md-6'>
-
 
     <div class='pull-right'>
       <form class='search-form form-inline'>
@@ -47,9 +45,9 @@
     </thead>
 
     <tbody>
-      <tr ng-repeat="row in rows | filter:searchFilter | orderBy:sortColumn:sortDir">
-        <td> <input type='checkbox' value="{{row.id}}" ng-click='check(row.id)'> </td>
-        <td ng-repeat="header in headers | filter:{selected:true}" ng-bind-html="row[header.key] | formatData:header"></td>
+      <tr ng-repeat="item in rows | filter:searchFilter | orderBy:sortColumn:sortDir">
+        <td> <input type='checkbox' value="{{item.id}}" ng-click='check(item.id)'> </td>
+        <td showvalue ng-repeat="header in headers | filter:{selected:true}"></td>
       </tr>
     </tbody>
   </table>

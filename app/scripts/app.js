@@ -13,6 +13,10 @@ angular.module('comparator', ['grantDatatables', 'ngRoute', 'ngSanitize','seo'])
         templateUrl: 'views/compare.html',
         controller: 'CompareCtrl'
       })
+      .when('/item/:id/:title', {
+        templateUrl: '/views/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
