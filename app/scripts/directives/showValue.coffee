@@ -8,7 +8,9 @@
     else if $scope.header.format == 'profile'
       $elem.html $compile("<a ng-click='clickLink(#{$scope.item.id})'>#{val}</a>")($scope)
     else
-      return val if $scope.header.format == ''
-      formatted = $filter($scope.header.format)(val)
-      $elem.html formatted
+      if $scope.header.format == ''
+        $elem.html val
+      else
+        formatted = $filter($scope.header.format)(val)
+        $elem.html formatted
 ]
