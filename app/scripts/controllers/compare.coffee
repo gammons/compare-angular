@@ -8,7 +8,6 @@
 
   $scope.colors = compareColor.getHex(20)
 
-
   $scope.compareClass = (row, rows, header) ->
     if header.compare
       sorted = sorter.sortItems(row, rows, header)

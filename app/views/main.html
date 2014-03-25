@@ -47,7 +47,7 @@
     <tbody>
       <tr ng-repeat="item in rows | filter:searchFilter | orderBy:sortColumn:sortDir">
         <td> <input type='checkbox' value="{{item.id}}" ng-click='check(item.id)'> </td>
-        <td showvalue ng-repeat="header in headers | filter:{selected:true}"></td>
+				<td showvalue ng-repeat="header in headers | filter:{selected:true}"></td>
       </tr>
     </tbody>
   </table>

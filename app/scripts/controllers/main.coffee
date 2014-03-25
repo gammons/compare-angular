@@ -8,7 +8,6 @@
   $scope.clickLink = (id) ->
     item = gdata.find(id)
     link = "/item/#{id}/#{gdata.seoUrl(item.title)}"
-    console.log "link is ", link
     $location.path("/item/#{id}/#{gdata.seoUrl(item.title)}")
 ]
 

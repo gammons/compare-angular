@@ -11,7 +11,7 @@
     <tr ng-repeat="header in headers">
       <td ng-repeat="item in rows" ng-style="compareClass(item, rows, header)">
         <dt>{{header.name}}<star></star></dt>
-        <dd ng-bind-html="item[header.key] | formatData:header"></dd>
+        <dd showvalue>
       </td>
     </tr>
   </tbody>
