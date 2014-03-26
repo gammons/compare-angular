@@ -23,3 +23,12 @@
 a {
 	cursor: pointer;
 }
+
+input {
+  margin: 2px;
+}
+
+.handle {
+  color: #bbb;
+  cursor: ns-resize;
+}
