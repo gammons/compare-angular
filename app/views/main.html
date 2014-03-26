@@ -17,9 +17,10 @@
             <span class="caret"></span>
           </button>
 
-          <ul class="dropdown-menu" role='menu'>
+          <ul ui-sortable ng-model="headers" class="dropdown-menu" role='menu'>
             <li ng-repeat="col in headers">
               <a stop-event='click' ng-click="col.selected = !col.selected">
+                <span class='handle glyphicon glyphicon-align-justify'></span>
                 <input type='checkbox' stop-event='click' ng-model="col.selected" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0"> {{col.name}}
               </a>
             </li>
