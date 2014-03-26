@@ -1,18 +1,20 @@
-<table class='table table-bordered'>
-  <thead>
-    <tr>
-      <th ng-repeat="item in rows">
-        <h1>{{item.title}}</h1>
-      </th>
-    </tr>
-  </thead>
+<div class='table-responsive'>
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <th ng-repeat="item in rows">
+          <h1>{{item.title}}</h1>
+        </th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr ng-repeat="header in headers">
-      <td ng-repeat="item in rows" ng-style="compareClass(item, rows, header)">
-        <dt>{{header.name}}<star></star></dt>
-        <dd showvalue>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <tbody>
+      <tr ng-repeat="header in headers">
+        <td ng-repeat="item in rows" ng-style="compareClass(item, rows, header)">
+          <dt>{{header.name}}<star></star></dt>
+          <dd showvalue>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
